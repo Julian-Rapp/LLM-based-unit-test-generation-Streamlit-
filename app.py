@@ -126,6 +126,7 @@ def build_user_prompt(code_text: str, language: str, framework: str, funcs=None,
     if classes:
         details.append(f"Top-level classes: {', '.join(classes)}")
     meta = "\n".join(details)
+
     return f"""LANGUAGE: {language}
 TEST FRAMEWORK: {framework}
 {('CODE STRUCTURE:\n' + meta) if meta else ''}
